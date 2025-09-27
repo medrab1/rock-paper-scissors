@@ -1,3 +1,4 @@
+
 {
   "frame": {
     "name": "Rock Paper Scissors",
@@ -8,7 +9,8 @@
     "splashBackgroundColor": "#000000",
     "subtitle": "Rock paper scissors game",
     "description": "A simple rock paper scissors game",
-    "primaryCategory": "games"
+    "primaryCategory": "games",
+    "webhookUrl": "https://brayans-rock-paper-scissors.netlify.app/api/webhook"
   },
   "accountAssociation": {
     "header": "",
