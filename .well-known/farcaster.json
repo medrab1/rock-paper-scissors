@@ -13,8 +13,9 @@
     "webhookUrl": "https://brayans-rock-paper-scissors.netlify.app/api/webhook"
   },
   "accountAssociation": {
-    "header": "",
-    "payload": "",
-    "signature": ""
+    "header": "eyJmaWQiOjEzNDY3NDUsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHg2MzkxYzA4NzcxRjlEM2NjOTU3MDE5ZDljNTVkQjRiQmNiNEM3MTEzIn0",
+    "payload": "eyJkb21haW4iOiJicmF5YW5zLXJvY2stcGFwZXItc2Npc3NvcnMubmV0bGlmeS5hcHAifQ",
+    "signature": "MHg0NGQwNGVkNTViODk5OTI0MjFlOTU0ZjI5ZWYyYmUyZDM4NzhlMzk2ODU2OTdiODY2YzM1ZjcxM2NhYWMzNGI1MDk1MTlkNjAyMDY5ZmU5MGUyZWRiY2IxM2JkNDIwODUyYjc2N2JmMzU3ZjE2NDkzOWExZTdmYjhjYzEwOWY4NjFi"
   }
+
 }
