@@ -140,5 +140,15 @@
       }, 200); // after shake finishes
     }
   </script>
+
+<script type="module">
+    import { sdk } from "https://esm.sh/@farcaster/miniapp-sdk"
+  
+    // Wait for content to load first
+    window.addEventListener("DOMContentLoaded", async () => {
+      await sdk.actions.ready()
+    })
+  </script>
+
 </body>
 </html>
