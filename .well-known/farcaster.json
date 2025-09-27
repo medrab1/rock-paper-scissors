@@ -1,18 +1,18 @@
 {
-    "frame": {
-      "name": "Rock Paper Scissors",
-      "version": "1",
-      "iconUrl": "https://raw.githubusercontent.com/medrab1/rock-paper-scissors/refs/heads/main/rps.png",
-      "homeUrl": "https://brayans-rock-paper-scissors.netlify.app/",
-      "splashImageUrl": "https://raw.githubusercontent.com/medrab1/rock-paper-scissors/refs/heads/main/rps.png",
-      "splashBackgroundColor": "#000000",
-      "subtitle": "Rock paper scissors game",
-      "description": "A simple rock paper scissors game",
-      "primaryCategory": "games"
-    },
-    "accountAssociation": {
-      "header": "",
-      "payload": "",
-      "signature": ""
-    }
+  "frame": {
+    "name": "Rock Paper Scissors",
+    "version": "1",
+    "iconUrl": "https://raw.githubusercontent.com/medrab1/rock-paper-scissors/refs/heads/main/rps.png",
+    "homeUrl": "https://brayans-rock-paper-scissors.netlify.app/",
+    "splashImageUrl": "https://raw.githubusercontent.com/medrab1/rock-paper-scissors/refs/heads/main/rps.png",
+    "splashBackgroundColor": "#000000",
+    "subtitle": "Rock paper scissors game",
+    "description": "A simple rock paper scissors game",
+    "primaryCategory": "games"
+  },
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
   }
+}
