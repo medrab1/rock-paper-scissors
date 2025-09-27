@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: white;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #444;
+      transform: scale(1.1);
+    }
+
+    #choices {
+      font-size: 60px;
+      margin: 20px;
+      min-height: 80px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Scoreboard */
+    #scoreboard {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+
+    /* Animations */
+    .shake {
+      animation: shake 0.6s ease;
+    }
+
+    @keyframes shake {
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(-15px); }
+      50%  { transform: translateX(15px); }
+      75%  { transform: translateX(-15px); }
+      100% { transform: translateX(0); }
+    }
+
+    .pop {
+      animation: pop 0.5s ease;
+    }
+
+    @keyframes pop {
+      0%   { transform: scale(0.5); opacity: 0; }
+      80%  { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Rock Paper Scissors ✊ ✋ ✌️</h1>
+  <button onclick="play('rock')">✊ Rock</button>
+  <button onclick="play('paper')">✋ Paper</button>
+  <button onclick="play('scissors')">✌️ Scissors</button>
+
+  <div id="choices"></div>
+  <p id="result"></p>
+
+  <div id="scoreboard">
+    🧑 You: <span id="playerScore">0</span> |
+    🤖 Computer: <span id="computerScore">0</span> |
+    🤝 Ties: <span id="tieScore">0</span>
+  </div>
+
+  <script>
+    const emojis = {
+      rock: "✊",
+      paper: "✋",
+      scissors: "✌️"
+    };
+
+    let playerScore = 0;
+    let computerScore = 0;
+    let tieScore = 0;
+
+    function play(playerChoice) {
+      const choices = ["rock", "paper", "scissors"];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+      const choicesEl = document.getElementById("choices");
+      const resultEl = document.getElementById("result");
+
+      // Show both emojis
+      choicesEl.innerHTML = `${emojis[playerChoice]} VS ${emojis[computerChoice]}`;
+      choicesEl.classList.remove("shake");
+      void choicesEl.offsetWidth; // restart animation
+      choicesEl.classList.add("shake");
+
+      // Decide winner after short delay
+      setTimeout(() => {
+        let result = "";
+        if (playerChoice === computerChoice) {
+          result = "🤝 It's a tie!";
+          tieScore++;
+        } else if (
+          (playerChoice === "rock" && computerChoice === "scissors") ||
+          (playerChoice === "paper" && computerChoice === "rock") ||
+          (playerChoice === "scissors" && computerChoice === "paper")
+        ) {
+          result = `🎉 You win! ${emojis[playerChoice]} beats ${emojis[computerChoice]}`;
+          playerScore++;
+        } else {
+          result = `😢 You lose! ${emojis[computerChoice]} beats ${emojis[playerChoice]}`;
+          computerScore++;
+        }
+
+        resultEl.textContent = result;
+        resultEl.classList.remove("pop");
+        void resultEl.offsetWidth; // restart animation
+        resultEl.classList.add("pop");
+
+        // Update scoreboard
+        document.getElementById("playerScore").textContent = playerScore;
+        document.getElementById("computerScore").textContent = computerScore;
+        document.getElementById("tieScore").textContent = tieScore;
+      }, 200); // after shake finishes
+    }
+  </script>
+</body>
+</html>
